@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B3C5D" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <title>ORINET - Enterprise Networking Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,11 +14,16 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="#home" data-page="home" class="logo-link">
             <img src="images/logo.png" alt="ORINET" class="logo" />
         </a>
-        <ul class="nav-menu">
+        <button type="button" class="navbar-toggle" id="navbar-toggle" aria-label="Open menu" aria-expanded="false">
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+            <span class="navbar-toggle-bar"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
             <li class="dropdown">
                 <a href="#solutions" data-page="solutions" class="dropdown-toggle">Solutions & Products<span
                         class="arrow">▼</span></a>

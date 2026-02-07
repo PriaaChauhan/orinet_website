@@ -43,8 +43,39 @@ function switchTab(tabId, clickedElement) {
     }
 }
 
-// NAVBAR 
+// Navbar hamburger toggle
 document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.getElementById('navbar');
+    const toggle = document.getElementById('navbar-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (toggle && navMenu) {
+        toggle.addEventListener('click', function () {
+            const isOpen = navbar.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', isOpen);
+            toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            if (!isOpen) {
+                document.querySelectorAll('.navbar .dropdown.open').forEach(function (d) {
+                    d.classList.remove('open');
+                });
+            }
+        });
+    }
+
+    // Mobile: click dropdown toggle to expand/collapse submenu
+    document.querySelectorAll('.navbar .dropdown-toggle').forEach(function (toggleBtn) {
+        toggleBtn.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                var dropdown = this.closest('.dropdown');
+                if (dropdown) {
+                    dropdown.classList.toggle('open');
+                }
+            }
+        });
+    });
+
     const links = document.querySelectorAll('a[data-page]');
     links.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -53,7 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const scrollTarget = this.getAttribute('data-scroll');
             showPage(page);
 
-            // Scroll to specific section if data-scroll attribute exists
+            // Close mobile menu when a link is clicked
+            if (navbar && navbar.classList.contains('open')) {
+                navbar.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Open menu');
+                document.body.style.overflow = '';
+            }
+
             if (scrollTarget) {
                 setTimeout(() => {
                     const targetElement = document.getElementById(scrollTarget);
@@ -72,6 +110,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     window.addEventListener('hashchange', handleHash);
     handleHash(); // Initial
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && navbar && navbar.classList.contains('open')) {
+            navbar.classList.remove('open');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Open menu');
+            }
+            document.body.style.overflow = '';
+        }
+    });
 
     // Form Submissions (basic, no backend)
     const forms = document.querySelectorAll('form');
