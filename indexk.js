@@ -10,6 +10,14 @@ function showPage(pageId) {
         targetPage.classList.add('active');
         window.location.hash = pageId; // Update URL
     }
+
+    // Set active nav link (underline CTA green)
+    document.querySelectorAll('.navbar a[data-page]').forEach(function (link) {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === pageId) {
+            link.classList.add('active');
+        }
+    });
 }
 
 function switchTab(tabId, clickedElement) {
