@@ -865,10 +865,11 @@ table code,
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 .value-item {
@@ -884,6 +885,9 @@ table code,
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
 }
 
 .value-item:hover {
@@ -2101,6 +2105,215 @@ table code,
     transform: scale(1.05);
 }
 
+/* Section visuals (hero-style animation + icon + label beside content) */
+.section-visual {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.section-visual-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.section-visual-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.section-visual-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    background: rgba(11, 60, 93, 0.85);
+    color: #fff;
+}
+
+.section-visual-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.section-visual-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.section-visual-label {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.section-visual-node circle {
+    transform-origin: center;
+    animation: sectionNodePulse 2.5s ease-in-out infinite;
+}
+
+.section-visual-node:nth-child(odd) circle {
+    animation-delay: 0.3s;
+}
+
+@keyframes sectionNodePulse {
+    0%, 100% { opacity: 0.8; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ----- Meaningful animations: each visual tells the story of the text ----- */
+
+/* Networking: data + power flow (packets moving, speeds 100M/1G/2.5G) */
+.net-data-flow .flow-line {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: dataFlowDraw 3s ease-in-out infinite;
+}
+.net-data-flow .flow-2 { animation-delay: 0.4s; }
+.net-data-flow .flow-3 { animation-delay: 0.8s; }
+@keyframes dataFlowDraw {
+    0% { stroke-dashoffset: 400; opacity: 0.6; }
+    40% { stroke-dashoffset: 0; opacity: 1; }
+    60% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -400; opacity: 0.6; }
+}
+.net-data-dots .dot {
+    animation: dataDotMove 2.5s ease-in-out infinite;
+}
+.net-data-dots .d1 { animation-delay: 0s; }
+.net-data-dots .d2 { animation-delay: 0.5s; }
+.net-data-dots .d3 { animation-delay: 1s; }
+@keyframes dataDotMove {
+    0%, 100% { opacity: 0.5; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* NMS: CPU bar fill, port LEDs blink (active/alert), health chart drawing */
+.nms-cpu-bar {
+    animation: cpuBarPulse 4s ease-in-out infinite;
+}
+@keyframes cpuBarPulse {
+    0%, 100% { width: 52px; }
+    50% { width: 68px; }
+}
+.nms-ports .port-led.active {
+    animation: portLedBlink 1.5s ease-in-out infinite;
+}
+.nms-ports .port-led.active:nth-child(2n) { animation-delay: 0.25s; }
+.nms-ports .port-led.active:nth-child(3n) { animation-delay: 0.5s; }
+.nms-ports .port-led.alert {
+    animation: portLedAlert 1s ease-in-out infinite;
+}
+@keyframes portLedBlink {
+    0%, 100% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.7; filter: brightness(0.85); }
+}
+@keyframes portLedAlert {
+    0%, 100% { opacity: 1; filter: brightness(1.2); }
+    50% { opacity: 0.6; filter: brightness(0.7); }
+}
+.nms-chart-line {
+    stroke-dashoffset: 180;
+    animation: chartDraw 5s ease-in-out infinite;
+}
+@keyframes chartDraw {
+    0% { stroke-dashoffset: 180; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+}
+
+/* IoT: fault detection → restart → recovery (self-healing story) */
+.section-visual--iot .iot-device .iot-lens {
+    animation: iotLensActive 4s ease-in-out infinite;
+}
+@keyframes iotLensActive {
+    0%, 60%, 100% { opacity: 1; fill: #10B981; }
+    20%, 40% { opacity: 0.3; fill: #64748B; }
+}
+.section-visual--iot .iot-fault {
+    animation: iotFaultShow 8s ease-in-out infinite;
+}
+@keyframes iotFaultShow {
+    0%, 25%, 100% { opacity: 0; }
+    30%, 45% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.section-visual--iot .iot-restart-arrow {
+    animation: iotRestartShow 8s ease-in-out infinite;
+}
+@keyframes iotRestartShow {
+    0%, 45%, 100% { opacity: 0; }
+    52%, 75% { opacity: 1; }
+    80% { opacity: 0; }
+}
+
+/* Cloud: data flow between on-prem and cloud (secure) */
+.cloud-flow {
+    stroke-dashoffset: 0;
+    animation: cloudFlowMove 3s linear infinite;
+}
+@keyframes cloudFlowMove {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -28; }
+}
+
+/* Product 8380: high-speed 10G flow */
+.prod-flow {
+    stroke-dasharray: 12 8;
+    stroke-dashoffset: 0;
+    animation: prodFlowMove 2s linear infinite;
+}
+@keyframes prodFlowMove {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -40; }
+}
+
+/* Case 8367: power flow from sources to PoE output */
+.case8367-power-in,
+.case8367-power-out {
+    animation: powerFlowDash 2.5s linear infinite;
+}
+@keyframes powerFlowDash {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -24; }
+}
+
+/* Case study: fixed width for visual column so it fits beside text */
+.case-visual-col {
+    flex: 0 0 320px;
+    max-width: 320px;
+}
+
+.case-study-section .section-visual {
+    min-height: 240px;
+}
+
+/* Product hero visual */
+.product-hero-visual {
+    max-width: 500px;
+}
+
+.product-hero-visual .section-visual {
+    min-height: 300px;
+}
+
 .solution-content {
     text-align: left;
     padding: 2.75rem;
@@ -2842,20 +3055,24 @@ table code,
 }
 
 .values-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
 }
 
 .value-item {
-    max-width: 280px;
     padding: 35px;
     background: var(--bg-shade);
     border-radius: 16px;
     text-align: center;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
 }
 
 .value-item:hover {
@@ -2878,6 +3095,7 @@ table code,
 .value-item p {
     font-size: 1.05em;
     opacity: 0.9;
+    flex: 1;
 }
 
 .about-overview-section {
@@ -2928,15 +3146,17 @@ table code,
 
     .stats-grid,
     .values-grid {
+        grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .value-item {
+        min-height: 0;
+        padding: 25px;
     }
 
     .stat-number {
         font-size: 2.8em;
-    }
-
-    .value-item {
-        padding: 25px;
     }
 
     .about-overview-section,
@@ -3217,6 +3437,15 @@ table code,
         font-size: 2rem;
     }
 
+
+    .case-visual-col {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .case-study-section .section-visual {
+        min-height: 220px;
+    }
 
     .case-hero .row,
     .case-study-section .row {

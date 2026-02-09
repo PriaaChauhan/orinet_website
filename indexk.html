@@ -328,8 +328,40 @@
         <section id="networking" class="solution-section row">
             <div class="col">
                 <div class="image-wrapper">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2RkZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5ldHdvcmtpbmcrU3dpdGNoZXM8L3RleHQ+PC9zdmc+"
-                        alt="High-Performance Network Switches" class="solution-image" />
+                    <div class="section-visual section-visual--networking" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="secNet" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#1a5f87"/></linearGradient>
+                                    <linearGradient id="dataFlow" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/></linearGradient>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#secNet)"/>
+                                <!-- Switch chassis -->
+                                <rect x="80" y="70" width="240" height="140" rx="8" fill="rgba(0,0,0,0.25)" stroke="#10B981" stroke-width="2"/>
+                                <!-- RJ45 ports (data) -->
+                                <g class="net-ports">
+                                    <rect x="95" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="125" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="155" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="185" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="215" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="245" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="275" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/><rect x="305" y="95" width="22" height="14" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1"/>
+                                </g>
+                                <!-- Data packets flowing (animated) -->
+                                <g class="net-data-flow" fill="none" stroke="url(#dataFlow)" stroke-width="2" stroke-linecap="round">
+                                    <path class="flow-line flow-1" d="M50 120 L95 105 L200 105 L305 105 L350 120"/>
+                                    <path class="flow-line flow-2" d="M50 160 L95 145 L200 145 L305 145 L350 160"/>
+                                    <path class="flow-line flow-3" d="M50 200 L95 185 L200 185 L305 185 L350 200"/>
+                                </g>
+                                <g class="net-data-dots"><circle class="dot d1" cx="120" cy="105" r="3" fill="#10B981"/><circle class="dot d2" cx="200" cy="145" r="3" fill="#10B981"/><circle class="dot d3" cx="280" cy="185" r="3" fill="#10B981"/></g>
+                                <!-- PoE power labels (24V / 48V) -->
+                                <text x="200" y="135" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Inter,sans-serif">PoE 24V / 30V / 48V</text>
+                                <!-- Speed labels -->
+                                <text x="100" y="230" text-anchor="middle" fill="#10B981" font-size="10" font-weight="bold">100M</text>
+                                <text x="200" y="230" text-anchor="middle" fill="#10B981" font-size="10" font-weight="bold">1G</text>
+                                <text x="300" y="230" text-anchor="middle" fill="#10B981" font-size="10" font-weight="bold">2.5G</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10h.01M16 10h.01M8 14h8"/></svg></span>
+                            <span class="section-visual-label">Data + Power · 100M–2.5G · PoE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col solution-content">
@@ -381,8 +413,47 @@
         <section id="nms" class="solution-section row reverse">
             <div class="col">
                 <div class="image-wrapper">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2RkZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5ldHdvcmtpbmcrU3dpdGNoZXM8L3RleHQ+PC9zdmc+"
-                        alt="High-Performance Network Switches" class="solution-image" />
+                    <div class="section-visual section-visual--nms" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="secNms" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#1D72B8"/></linearGradient>
+                                    <linearGradient id="gaugeFill" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#065f46"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#secNms)"/>
+                                <!-- Dashboard frame -->
+                                <rect x="20" y="20" width="360" height="240" rx="8" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                                <!-- CPU gauge -->
+                                <text x="50" y="52" fill="rgba(255,255,255,0.9)" font-size="11" font-weight="600">CPU %</text>
+                                <rect x="50" y="58" width="80" height="14" rx="4" fill="rgba(0,0,0,0.4)"/>
+                                <rect class="nms-cpu-bar" x="50" y="58" width="52" height="14" rx="4" fill="url(#gaugeFill)"/>
+                                <!-- Temperature: Internal / Ambient -->
+                                <text x="50" y="95" fill="rgba(255,255,255,0.9)" font-size="10">Temp</text>
+                                <text x="52" y="110" fill="#10B981" font-size="12" font-weight="bold">42°C</text>
+                                <text x="52" y="125" fill="rgba(255,255,255,0.6)" font-size="9">int / amb</text>
+                                <!-- Port status row (active = green blink, inactive = grey) -->
+                                <text x="50" y="155" fill="rgba(255,255,255,0.9)" font-size="10">Ports</text>
+                                <g class="nms-ports">
+                                    <circle class="port-led active" cx="70" cy="170" r="5" fill="#10B981"/><circle class="port-led active" cx="90" cy="170" r="5" fill="#10B981"/><circle class="port-led active" cx="110" cy="170" r="5" fill="#10B981"/><circle class="port-led" cx="130" cy="170" r="5" fill="#475569"/><circle class="port-led active" cx="150" cy="170" r="5" fill="#10B981"/><circle class="port-led active" cx="170" cy="170" r="5" fill="#10B981"/><circle class="port-led alert" cx="190" cy="170" r="5" fill="#F59E0B"/><circle class="port-led active" cx="210" cy="170" r="5" fill="#10B981"/>
+                                </g>
+                                <!-- Mini line chart (real-time trend) -->
+                                <text x="250" y="52" fill="rgba(255,255,255,0.9)" font-size="11">Health</text>
+                                <rect x="248" y="98" width="124" height="50" rx="4" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.1)"/>
+                                <path class="nms-chart-line" d="M250 100 L280 95 L310 88 L340 92 L370 85" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-dasharray="180" stroke-dashoffset="180"/>
+                                <!-- Centralized: many switches → one dashboard -->
+                                <text x="260" y="175" fill="rgba(255,255,255,0.7)" font-size="10">Centralized</text>
+                                <g class="nms-switches">
+                                    <rect x="255" y="182" width="28" height="18" rx="2" fill="rgba(16,185,129,0.4)" stroke="#10B981"/><rect x="290" y="182" width="28" height="18" rx="2" fill="rgba(16,185,129,0.4)" stroke="#10B981"/><rect x="325" y="182" width="28" height="18" rx="2" fill="rgba(16,185,129,0.4)" stroke="#10B981"/>
+                                </g>
+                                <path class="nms-arrow" d="M290 200 L290 215 L200 215" fill="none" stroke="#10B981" stroke-width="1.5" stroke-dasharray="6 4" stroke-dashoffset="0"/>
+                                <text x="200" y="235" text-anchor="middle" fill="#10B981" font-size="11" font-weight="600">Real-time · Alerts</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+                            <span class="section-visual-label">Monitor · Diagnose · Optimize</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col solution-content">
@@ -440,8 +511,43 @@
         <section id="iot" class="solution-section row">
             <div class="col">
                 <div class="image-wrapper">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2RkZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5ldHdvcmtpbmcrU3dpdGNoZXM8L3RleHQ+PC9zdmc+"
-                        alt="High-Performance Network Switches" class="solution-image" />
+                    <div class="section-visual section-visual--iot" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="secIot" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#secIot)"/>
+                                <!-- Central switch -->
+                                <rect x="160" y="90" width="80" height="100" rx="6" fill="rgba(0,0,0,0.3)" stroke="#10B981" stroke-width="2"/>
+                                <text x="200" y="125" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">Switch</text>
+                                <!-- Camera/device (connected device) -->
+                                <g class="iot-device iot-camera">
+                                    <rect x="60" y="100" width="50" height="40" rx="4" fill="rgba(0,0,0,0.35)" stroke="#10B981" stroke-width="1.5"/>
+                                    <circle cx="85" cy="118" r="8" fill="#1e293b"/>
+                                    <circle cx="85" cy="118" r="4" fill="#10B981" class="iot-lens"/>
+                                </g>
+                                <path class="iot-link" d="M110 120 L160 140" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6 4"/>
+                                <!-- Fault state: device goes dim, then restart arrow -->
+                                <g class="iot-fault" opacity="0">
+                                    <rect x="58" y="98" width="54" height="44" rx="4" fill="rgba(239,68,68,0.2)" stroke="#EF4444" stroke-width="1.5"/>
+                                    <path d="M65 105 L95 135 M95 105 L65 135" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+                                </g>
+                                <g class="iot-restart-arrow" opacity="0">
+                                    <path d="M130 140 L180 140 L180 100" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polygon points="175,92 182,108 168,102" fill="#10B981"/>
+                                    <text x="155" y="95" text-anchor="middle" fill="#10B981" font-size="9" font-weight="bold">RESTART</text>
+                                </g>
+                                <!-- Recovered device (same camera, active again) -->
+                                <text x="85" y="255" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="10">Camera / Device</text>
+                                <text x="200" y="255" text-anchor="middle" fill="#10B981" font-size="11" font-weight="600">Detect → Restart → Uptime</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></span>
+                            <span class="section-visual-label">Self-Healing · Auto-Recovery</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col solution-content">
@@ -467,8 +573,43 @@
         <section id="cloud" class="solution-section row reverse">
             <div class="col">
                 <div class="image-wrapper">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2RkZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5ldHdvcmtpbmcrU3dpdGNoZXM8L3RleHQ+PC9zdmc+"
-                        alt="High-Performance Network Switches" class="solution-image" />
+                    <div class="section-visual section-visual--cloud" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="secCloud" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a5f87"/><stop offset="100%" stop-color="#0B3C5D"/></linearGradient>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#secCloud)"/>
+                                <!-- On-premise: server/rack -->
+                                <g class="cloud-onprem">
+                                    <rect x="50" y="80" width="100" height="120" rx="6" fill="rgba(0,0,0,0.25)" stroke="#10B981" stroke-width="1.5"/>
+                                    <rect x="60" y="95" width="80" height="12" rx="2" fill="rgba(16,185,129,0.3)"/><rect x="60" y="112" width="80" height="12" rx="2" fill="rgba(16,185,129,0.3)"/><rect x="60" y="129" width="80" height="12" rx="2" fill="rgba(16,185,129,0.3)"/>
+                                    <text x="100" y="175" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">On-Premise</text>
+                                </g>
+                                <!-- Cloud -->
+                                <g class="cloud-hosted">
+                                    <path class="cloud-shape" d="M280 120 Q320 90 360 115 Q380 140 360 165 Q340 190 300 185 Q270 200 250 185 Q220 170 250 145 Q260 100 280 120 Z" fill="rgba(16,185,129,0.25)" stroke="#10B981" stroke-width="1.5"/>
+                                    <text x="305" y="165" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">Cloud Hosted</text>
+                                </g>
+                                <!-- Secure: lock + hashed data (your credentials) -->
+                                <g class="cloud-secure">
+                                    <circle cx="200" cy="140" r="36" fill="rgba(0,0,0,0.3)" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M200 125 L200 118 Q200 110 208 110 Q216 110 216 118 L216 125 Q216 132 208 132 L192 132 Q184 132 184 125 L184 118 Q184 110 192 110 Q200 110 200 118 Z" fill="none" stroke="#10B981" stroke-width="2"/>
+                                    <rect x="193" y="122" width="14" height="12" fill="#0B3C5D"/>
+                                    <text x="200" y="158" text-anchor="middle" fill="#10B981" font-size="9" font-weight="bold">HASHED</text>
+                                    <text x="200" y="170" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8">Your credentials</text>
+                                </g>
+                                <!-- Data flow lines (animated) -->
+                                <path class="cloud-flow cloud-flow-left" d="M150 140 L185 140" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+                                <path class="cloud-flow cloud-flow-right" d="M215 140 L250 140" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+                                <text x="200" y="230" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">Your choice · Your data · Secure</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
+                            <span class="section-visual-label">On-Prem or Cloud · Hashed &amp; Secure</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col solution-content">
@@ -519,8 +660,38 @@
             <!-- Product Hero -->
             <section class="product-hero row">
                 <div class="col">
-                    <img src="https://via.placeholder.com/500x400?text=ORINET+8380+Switch" alt="ORINET 8380 Switch"
-                        class="product-image" />
+                    <div class="image-wrapper product-hero-visual">
+                        <div class="section-visual section-visual--product" aria-hidden="true">
+                            <div class="section-visual-bg">
+                                <svg class="section-visual-svg" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="secProd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="50%" stop-color="#1D72B8"/><stop offset="100%" stop-color="#0B3C5D"/></linearGradient>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#secProd)"/>
+                                    <!-- Switch chassis: 48x SFP+ ports (shown as grid of slots) -->
+                                    <rect x="40" y="40" width="320" height="200" rx="10" fill="rgba(0,0,0,0.3)" stroke="#10B981" stroke-width="2"/>
+                                    <text x="200" y="75" text-anchor="middle" fill="rgba(255,255,255,0.95)" font-size="14" font-weight="700">ORINET 8380</text>
+                                    <text x="200" y="92" text-anchor="middle" fill="#10B981" font-size="10">48× 10G SFP+ · Realtek MCU · 4GB RAM · PoE</text>
+                                    <!-- SFP+ port grid (6 rows x 8 = 48 representation) -->
+                                    <g class="prod-sfp-ports">
+                                        <g id="row1"><rect x="55" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="78" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="101" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="124" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="147" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="170" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="193" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="216" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/></g>
+                                        <g id="row2"><rect x="255" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="278" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="301" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="324" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="347" y="105" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/></g>
+                                        <rect x="55" y="122" width="310" height="2" fill="rgba(16,185,129,0.3)"/>
+                                        <rect x="55" y="132" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="78" y="132" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="255" y="132" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/><rect x="324" y="132" width="18" height="10" rx="1" fill="#0B3C5D" stroke="#10B981" stroke-width="0.8"/>
+                                        <text x="200" y="165" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="9">… 48 ports total …</text>
+                                    </g>
+                                    <!-- High-speed data flow (10G) -->
+                                    <path class="prod-flow" d="M60 185 L200 185 L340 185" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="12 8"/>
+                                    <text x="200" y="215" text-anchor="middle" fill="#10B981" font-size="12" font-weight="bold">10 Gbps · Ultra-low latency</text>
+                                    <text x="200" y="275" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Scalable to 10K+ devices</text>
+                                </svg>
+                            </div>
+                            <div class="section-visual-content">
+                                <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10h.01M16 10h.01M8 14h8"/></svg></span>
+                                <span class="section-visual-label">48× 10G SFP+ · PoE · 4GB RAM</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <h1>ORINET 8380 Series</h1>
@@ -551,20 +722,35 @@
         <!-- Case Study 1: 8367 -->
         <section id="case-8367" class="case-study-section">
             <div class="row">
-                <div class="col">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8367 UPS-PoE-SB-AC6001 Switch" class="case-image" />
-
+                <div class="col case-visual-col">
+                    <div class="section-visual section-visual--case" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs><linearGradient id="case8367" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+                                <rect width="100%" height="100%" fill="url(#case8367)"/>
+                                <!-- UPS unit -->
+                                <rect x="140" y="60" width="120" height="90" rx="6" fill="rgba(0,0,0,0.3)" stroke="#10B981" stroke-width="2"/>
+                                <text x="200" y="95" text-anchor="middle" fill="#10B981" font-size="11" font-weight="bold">UPS</text>
+                                <!-- Power sources → UPS -->
+                                <g class="case8367-sources">
+                                    <rect x="40" y="50" width="36" height="28" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10B981"/><text x="58" y="68" text-anchor="middle" fill="#fff" font-size="8">AC</text>
+                                    <rect x="40" y="88" width="36" height="28" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10B981"/><path d="M52 105 L58 98 L64 105 L58 112 Z" fill="#10B981"/><text x="58" y="118" text-anchor="middle" fill="#fff" font-size="8">Batt</text>
+                                    <rect x="40" y="126" width="36" height="28" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10B981"/><circle cx="58" cy="138" r="6" fill="none" stroke="#F59E0B" stroke-width="1.5"/><path d="M58 130 L58 134 L62 138 L58 142 L54 138 Z" fill="#F59E0B"/><text x="58" y="156" text-anchor="middle" fill="#fff" font-size="8">Solar</text>
+                                </g>
+                                <path class="case8367-power-in" d="M76 105 L140 105" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6 4"/>
+                                <!-- PoE output 24/30/48/52V -->
+                                <path class="case8367-power-out" d="M260 105 L324 105" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="6 4"/>
+                                <rect x="326" y="92" width="34" height="26" rx="4" fill="rgba(0,0,0,0.3)" stroke="#10B981"/>
+                                <text x="343" y="102" text-anchor="middle" fill="#10B981" font-size="8">PoE</text>
+                                <text x="343" y="112" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="7">24-52V</text>
+                                <text x="200" y="235" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">UPS-PoE · AC + Battery + Solar</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                            <span class="section-visual-label">Model 8367</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="col case-content">
                     <h2>Case Study: UPS-PoE-SB-AC6001 (Model 8367)</h2>
@@ -672,9 +858,33 @@
         <!-- Case Study 2: 8380 -->
         <section id="case-8380" class="case-study-section">
             <div class="row">
-                <div class="col">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8380 8GE-2SFP Industrial Switch" class="case-image" />
+                <div class="col case-visual-col">
+                    <div class="section-visual section-visual--case" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs><linearGradient id="case8380" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#1D72B8"/></linearGradient></defs>
+                                <rect width="100%" height="100%" fill="url(#case8380)"/>
+                                <!-- Industrial chassis (rugged) -->
+                                <rect x="70" y="50" width="260" height="150" rx="6" fill="rgba(30,41,59,0.8)" stroke="#10B981" stroke-width="2"/>
+                                <text x="200" y="78" text-anchor="middle" fill="#10B981" font-size="12" font-weight="bold">8GE + 2 SFP Industrial</text>
+                                <!-- 8× copper PoE ports (1-2: 24V, 3-4: 90W bt, 5-8: at) -->
+                                <g class="case8380-ports">
+                                    <rect x="85" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/><text x="97" y="106" text-anchor="middle" fill="#10B981" font-size="7">24V</text>
+                                    <rect x="115" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/><rect x="145" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#F59E0B"/><text x="157" y="106" text-anchor="middle" fill="#F59E0B" font-size="7">90W</text>
+                                    <rect x="175" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/><rect x="205" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/><rect x="235" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/><rect x="265" y="95" width="24" height="14" rx="2" fill="#0B3C5D" stroke="#10B981"/>
+                                </g>
+                                <!-- 2× SFP fiber -->
+                                <rect x="315" y="95" width="22" height="50" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1.5"/>
+                                <rect x="343" y="95" width="22" height="50" rx="2" fill="#0B3C5D" stroke="#10B981" stroke-width="1.5"/>
+                                <text x="333" y="158" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8">SFP</text>
+                                <text x="200" y="235" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Rugged · -40°C to 75°C · 20Gbps</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10h.01M16 10h.01M8 14h8"/></svg></span>
+                            <span class="section-visual-label">Model 8380</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="col case-content">
                     <h2>Case Study: 8GE-2SFP Industrial Switch (Model 8380)</h2>
@@ -798,9 +1008,31 @@
         <!-- Case Study 3: 8309 -->
         <section id="case-8309" class="case-study-section">
             <div class="row">
-                <div class="col">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8309 PoE-100M-8+2 Switch" class="case-image" />
+                <div class="col case-visual-col">
+                    <div class="section-visual section-visual--case" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs><linearGradient id="case8309" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B3C5D"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+                                <rect width="100%" height="100%" fill="url(#case8309)"/>
+                                <!-- 8 PoE + 2 uplink switch -->
+                                <rect x="100" y="55" width="200" height="95" rx="6" fill="rgba(0,0,0,0.25)" stroke="#10B981" stroke-width="2"/>
+                                <text x="200" y="78" text-anchor="middle" fill="#10B981" font-size="11" font-weight="bold">8 PoE + 2 Uplink</text>
+                                <g fill="#10B981" opacity="0.9"><rect x="112" y="88" width="20" height="12" rx="1"/><rect x="138" y="88" width="20" height="12" rx="1"/><rect x="164" y="88" width="20" height="12" rx="1"/><rect x="190" y="88" width="20" height="12" rx="1"/><rect x="216" y="88" width="20" height="12" rx="1"/><rect x="242" y="88" width="20" height="12" rx="1"/><rect x="268" y="88" width="20" height="12" rx="1"/><rect x="294" y="88" width="20" height="12" rx="1"/></g>
+                                <rect x="130" y="108" width="24" height="32" rx="2" fill="rgba(16,185,129,0.3)" stroke="#10B981"/><rect x="246" y="108" width="24" height="32" rx="2" fill="rgba(16,185,129,0.3)" stroke="#10B981"/>
+                                <text x="200" y="135" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="9">10/100M · 100m (250m ext)</text>
+                                <!-- Connected: camera + WAP -->
+                                <g class="case8309-devices"><rect x="80" y="175" width="40" height="32" rx="4" fill="rgba(0,0,0,0.3)" stroke="#10B981"/><circle cx="100" cy="188" r="6" fill="#10B981"/><text x="100" y="212" text-anchor="middle" fill="#fff" font-size="8">Camera</text>
+                                <rect x="280" y="175" width="40" height="32" rx="4" fill="rgba(0,0,0,0.3)" stroke="#10B981"/><path d="M292 182 L308 182 L300 192 Z" fill="#10B981"/><text x="300" y="212" text-anchor="middle" fill="#fff" font-size="8">WAP</text></g>
+                                <!-- 6000V lightning protection -->
+                                <g class="case8309-surge"><path d="M200 158 L205 170 L198 170 L203 182 L196 182 L200 195 L204 182 L197 182 L202 170 Z" fill="#F59E0B" stroke="#F59E0B" stroke-width="1"/><text x="200" y="218" text-anchor="middle" fill="#F59E0B" font-size="9" font-weight="bold">6kV Surge</text></g>
+                                <text x="200" y="255" text-anchor="middle" fill="#fff" font-size="10">IP cameras · WLAN · 120W total</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span>
+                            <span class="section-visual-label">Model 8309</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="col case-content">
                     <h2>Case Study: PoE-100M-8+2 Switch (Model 8309)</h2>
@@ -916,9 +1148,28 @@
         <!-- Case Study: 8370 -->
         <section id="case-8370" class="case-study-section">
             <div class="row">
-                <div class="col">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVY3QRxjytm1ogIZID29QwLLBTjOCU9cOEBg&s"
-                        alt="8370 PoE-8G-2F-WM Switch" class="case-image" />
+                <div class="col case-visual-col">
+                    <div class="section-visual section-visual--case" aria-hidden="true">
+                        <div class="section-visual-bg">
+                            <svg class="section-visual-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+                                <defs><linearGradient id="case8370" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a5f87"/><stop offset="100%" stop-color="#0B3C5D"/></linearGradient></defs>
+                                <rect width="100%" height="100%" fill="url(#case8370)"/>
+                                <rect x="60" y="45" width="280" height="130" rx="8" fill="rgba(0,0,0,0.25)" stroke="#10B981" stroke-width="2"/>
+                                <text x="200" y="72" text-anchor="middle" fill="#10B981" font-size="12" font-weight="bold">10 Port · 8 PoE+ + 2 SFP</text>
+                                <g fill="#10B981" opacity="0.85"><rect x="75" y="88" width="26" height="14" rx="2"/><rect x="108" y="88" width="26" height="14" rx="2"/><rect x="141" y="88" width="26" height="14" rx="2"/><rect x="174" y="88" width="26" height="14" rx="2"/><rect x="207" y="88" width="26" height="14" rx="2"/><rect x="240" y="88" width="26" height="14" rx="2"/><rect x="273" y="88" width="26" height="14" rx="2"/><rect x="306" y="88" width="26" height="14" rx="2"/></g>
+                                <rect x="318" y="108" width="22" height="48" rx="2" fill="#0B3C5D" stroke="#10B981"/><rect x="348" y="108" width="22" height="48" rx="2" fill="#0B3C5D" stroke="#10B981"/>
+                                <text x="200" y="118" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9">Gigabit PoE+ · 30W/port · 120W total</text>
+                                <g class="case8370-features"><path d="M120 155 L125 165 L118 165 L123 178 L116 178 L120 192" fill="none" stroke="#F59E0B" stroke-width="2"/><text x="120" y="212" text-anchor="middle" fill="#F59E0B" font-size="8">6kV</text>
+                                <text x="200" y="175" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10">Fanless · IP Surveillance</text>
+                                <rect x="268" y="155" width="44" height="28" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10B981"/><circle cx="278" cy="168" r="4" fill="#10B981"/><circle cx="290" cy="168" r="4" fill="#10B981"/><text x="290" y="192" text-anchor="middle" fill="#fff" font-size="8">Camera</text></g>
+                                <text x="200" y="250" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Fanless · Surge · 20Gbps</text>
+                            </svg>
+                        </div>
+                        <div class="section-visual-content">
+                            <span class="section-visual-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M8 10h.01M16 10h.01M8 14h8"/></svg></span>
+                            <span class="section-visual-label">Model 8370</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col case-content">
